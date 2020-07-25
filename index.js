@@ -72,6 +72,18 @@ class PSN {
         return http.get(option);
     }
 
+    async getUserFriends(onlineId) {
+        this.haveAccess();
+
+        const option = {
+            url: `https://${this.region}${urls.USERS_API}${onlineId}/friendList?fields=%40default,relation,requestMessageFlag,presence,%40personalDetail,trophySummary`,
+            auth: {
+                'bearer': `${this.access_token}`
+            }
+        }
+        return http.get(option);
+    }
+
     async getIndividualGame(npCommunicationId, onlineId) {
         this.haveAccess();
 
