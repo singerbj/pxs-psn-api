@@ -76,7 +76,7 @@ class PSN {
         this.haveAccess();
 
         const option = {
-            url: `https://${this.region}${urls.USERS_API}${onlineId}/friendList?friendStatus=friend&sort=onlineId`,
+            url: `https://${this.region}${urls.USERS_API}${onlineId}/friendList?friendStatus=%22friend%22&sort=onlineId`,
             auth: {
                 'bearer': `${this.access_token}`
             }
